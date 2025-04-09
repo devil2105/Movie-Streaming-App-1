@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Your existing ScrollView content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:background="#000000"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Featured Movie Section -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/featuredMovieImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#80000000"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Strange 2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Action Superhero: Selected Hero"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/playButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/button_red_solid"
+                            android:text="Play"
+                            android:textColor="#FFFFFF"/>
+
+                        <Button
+                            android:id="@+id/myListButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_transparent"
+                            android:text="My List"
+                            android:textColor="#FFFFFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Top 10 Movies Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top 10 Movies This Week"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="See all"
+                        android:textColor="#F22E2E"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Add movie items here -->
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="180dp"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"/>
+
+                        <!-- Repeat for other movies -->
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- New Releases Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Releases"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="See all"
+                        android:textColor="#F22E2E"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Add new release items here -->
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="180dp"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"/>
+
+                        <!-- Repeat for other releases -->
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#1A1A1A"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@drawable/nav_item_color_state"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"/>
+</RelativeLayout>

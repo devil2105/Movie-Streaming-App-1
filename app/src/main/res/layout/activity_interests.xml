@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_vertical">>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Choose Your Interest"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Choose your interests and get the best movie recommendations. Don't worry, you can always change it later."
+            android:textColor="#AAAAAA"
+            android:textSize="14sp"
+            android:maxWidth="300dp"
+            android:textAlignment="center"/>
+
+        <!-- Interest Chips Container -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:singleSelection="false"
+            app:chipSpacing="8dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="8dp">
+
+            <!-- All chips now use this consistent structure -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAction"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Action"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDrama"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drama"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Continue with the same pattern for all other chips -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipComedy"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comedy"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 2 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipHorror"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horror"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAdventure"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adventure"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipThriller"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thriller"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 3 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipRomance"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Romance"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipScience"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Science"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMusic"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 4 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDocumentary"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Documentary"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCrime"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crime"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 5 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFantasy"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fantasy"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMystery"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mystery"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFiction"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fiction"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 6 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAnimation"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animation"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWar"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="War"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipHistory"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 7 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTelevision"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Television"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSuperheroes"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Superheroes"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <!-- Row 8 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAnime"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anime"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSports"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sports"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipKDrama"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="K-Drama"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/chip_unselected_bg"
+                app:chipStrokeColor="@color/chip_unselected_stroke"
+                app:chipStrokeWidth="1dp"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Bottom Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnSkip"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:text="Skip"
+                android:textColor="#FFFFFF"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="1dp"/>
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="#F22E2E"
+                android:text="Continue"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

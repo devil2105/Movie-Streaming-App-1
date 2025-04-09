@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- "Let's you in" Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Let's you in"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <!-- Facebook Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_facebook"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:text="Continue with Facebook"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_facebook"
+            app:iconTint="#FFFFFF"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"/>
+
+        <!-- Google Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_google"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:text="Continue with Google"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:iconTint="@null"
+            app:icon="@drawable/ic_google"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"/>
+
+        <!-- Apple Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_apple"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:text="Continue with Apple"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_apple"
+            app:iconTint="#FFFFFF"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"/>
+
+        <!-- Sign Up Text -->
+        <TextView
+            android:id="@+id/txt_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:text="Don't have an account? Sign up"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- Password Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#F22E2E"
+            android:text="Sign in with password"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:rippleColor="#E5FFFFFF"/>
+    </LinearLayout>
+</ScrollView>

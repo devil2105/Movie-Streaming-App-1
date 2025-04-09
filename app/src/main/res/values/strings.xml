@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Movie Streaming App</string>
+
+    <!-- Login Screen -->
+    <string name="app_logo"># M</string>
+    <string name="lets_you_in">Let\'s you in</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_apple">Continue with Apple</string>
+    <string name="or">or</string>
+    <string name="sign_in_with_password">Sign in with password</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+
+    <!-- Interest Selection Screen -->
+    <string name="choose_your_interest">Choose Your Interest</string>
+    <string name="interest_description">Choose your interests and get the best movie recommendations. Don\'t worry, you can always change it later.</string>
+    <string name="skip">Skip</string>
+    <string name="continue_text">Continue</string>
+    <string name="top_movies">Top 10 Movies This Week</string>
+    <string name="new_releases">New Releases</string>
+    <string name="see_all">See all</string>
+
+    <!-- Download Screen -->
+    <string name="download">Download</string>
+</resources>

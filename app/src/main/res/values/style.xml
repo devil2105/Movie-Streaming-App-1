@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Add this below your existing styles -->
+    <style name="InterestChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/white</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <!-- Use these specific attribute names -->
+        <item name="chipBackgroundColor">@color/chip_unselected_bg</item>
+        <item name="chipStrokeColor">@color/chip_unselected_stroke</item>
+    </style>
+</resources>
