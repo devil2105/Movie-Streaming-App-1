@@ -32,17 +32,20 @@ android {
 }
 
 dependencies {
+    // AndroidX dependencies
     implementation(libs.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.recyclerview)
 
-    // Retrofit for API calls
+    // Networking
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    // Glide for image loading
+    // Image loading
     implementation(libs.glide)
     annotationProcessor(libs.glide.compiler)
 
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

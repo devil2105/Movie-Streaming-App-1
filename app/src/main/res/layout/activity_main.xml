@@ -28,7 +28,8 @@
                     android:id="@+id/featuredMovieImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Featured movie"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,14 +85,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
 
+                <!-- Section Header -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -110,26 +113,11 @@
                         android:textSize="14sp"/>
                 </LinearLayout>
 
-                <HorizontalScrollView
+                <!-- Top 10 Movies RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/topMoviesRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <!-- Add movie items here -->
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="180dp"
-                            android:layout_marginEnd="8dp"
-                            android:scaleType="centerCrop"/>
-
-                        <!-- Repeat for other movies -->
-                    </LinearLayout>
-                </HorizontalScrollView>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
             <!-- New Releases Section -->
