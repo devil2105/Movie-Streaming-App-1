@@ -6,8 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Toast; // Add this import statement
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,11 +16,11 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 import java.util.List;
 
-public class TopMoviesAdapter extends RecyclerView.Adapter<TopMoviesAdapter.MovieViewHolder> {
+public class NewReleasesAdapter extends RecyclerView.Adapter<NewReleasesAdapter.MovieViewHolder> {
     private final Context context;
     private final List<Movie> movies;
 
-    public TopMoviesAdapter(Context context, List<Movie> movies) {
+    public NewReleasesAdapter(Context context, List<Movie> movies) {
         this.context = context;
         this.movies = movies;
     }
@@ -30,7 +29,7 @@ public class TopMoviesAdapter extends RecyclerView.Adapter<TopMoviesAdapter.Movi
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_top_movie, parent, false);
+                .inflate(R.layout.item_new_release, parent, false);
         return new MovieViewHolder(view);
     }
 
@@ -38,7 +37,6 @@ public class TopMoviesAdapter extends RecyclerView.Adapter<TopMoviesAdapter.Movi
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = movies.get(position);
 
-        // Load movie poster with Glide
         Glide.with(context)
                 .load(movie.getPosterUrl())
                 .placeholder(R.drawable.movie_error)
@@ -46,17 +44,12 @@ public class TopMoviesAdapter extends RecyclerView.Adapter<TopMoviesAdapter.Movi
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.moviePoster);
 
-        // Set position badge (1-based index)
-        holder.topBadge.setText(String.valueOf(position + 1));
-
-        // Set click listener to play YouTube trailer
         holder.itemView.setOnClickListener(v -> {
             if (movie.getYoutubeId() != null && !movie.getYoutubeId().isEmpty()) {
                 Intent intent = new Intent(context, PlayerActivity.class);
                 intent.putExtra("youtube_id", movie.getYoutubeId());
                 context.startActivity(intent);
             } else {
-                // Fallback behavior if no YouTube ID is available
                 Toast.makeText(context,
                         "Trailer not available for " + movie.getTitle(),
                         Toast.LENGTH_SHORT).show();
@@ -70,13 +63,11 @@ public class TopMoviesAdapter extends RecyclerView.Adapter<TopMoviesAdapter.Movi
     }
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
-        final ImageView moviePoster;
-        final TextView topBadge;
+        ImageView moviePoster;
 
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             moviePoster = itemView.findViewById(R.id.moviePoster);
-            topBadge = itemView.findViewById(R.id.topBadge);
         }
     }
 }

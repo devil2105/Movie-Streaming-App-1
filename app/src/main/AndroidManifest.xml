@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.moviestreamingapp">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -25,12 +28,23 @@
             </intent-filter>
         </activity>
 
-        <!-- Declare all other activities -->
+        <!-- Main Activities -->
         <activity android:name=".LoginActivity" android:exported="true" />
         <activity android:name=".InterestsActivity" android:exported="true" />
         <activity android:name=".MainActivity" android:exported="true" />
         <activity android:name=".SearchActivity" android:exported="true" />
 
+        <!-- Player Activity with YouTube playback -->
+        <activity
+            android:name=".PlayerActivity"
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.NoActionBar.FullScreen">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="youtubePlayer" />
+        </activity>
 
     </application>
 </manifest>
