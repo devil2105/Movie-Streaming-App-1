@@ -6,58 +6,61 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private TextInputEditText emailEditText, passwordEditText;
+    private MaterialButton loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize buttons
-        MaterialButton btnPassword = findViewById(R.id.btn_password);
-        MaterialButton btnFacebook = findViewById(R.id.btn_facebook);
-        MaterialButton btnGoogle = findViewById(R.id.btn_google);
-        MaterialButton btnApple = findViewById(R.id.btn_apple);
+        // Initialize views
+        emailEditText = findViewById(R.id.emailEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
+        loginButton = findViewById(R.id.loginButton);
 
-        // Set click listeners
-        btnPassword.setOnClickListener(new View.OnClickListener() {
+        // Set click listener for login button
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToInterests();
-                Toast.makeText(LoginActivity.this, "Password Login clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+                // Get input values
+                String email = emailEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString().trim();
 
-        btnFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navigateToInterests();
-                Toast.makeText(LoginActivity.this, "Facebook Login clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+                // Simple validation
+                if (email.isEmpty()) {
+                    emailEditText.setError("Email is required");
+                    return;
+                }
 
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navigateToInterests();
-                Toast.makeText(LoginActivity.this, "Google Login clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+                if (password.isEmpty()) {
+                    passwordEditText.setError("Password is required");
+                    return;
+                }
 
-        btnApple.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navigateToInterests();
-                Toast.makeText(LoginActivity.this, "Apple Login clicked", Toast.LENGTH_SHORT).show();
+                // In a real app, you would validate the email and password against a server or local database.
+                // For this example, we'll just assume the login is successful.
+
+                // If validation passes, navigate to profile screen
+                navigateToProfile(email);
+                Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void navigateToInterests() {
-        Intent intent = new Intent(LoginActivity.this, InterestsActivity.class);
-        startActivity(intent);
-        // Optional: finish() if you want to close the login activity
-        // finish();
+    private void navigateToProfile(String email) {
+        try {
+            Intent intent = new Intent(LoginActivity.this, FillProfileActivity.class);
+            intent.putExtra("email", email); // Pass the email
+            startActivity(intent);
+            finish(); // Close login activity
+        } catch (Exception e) {
+            e.printStackTrace(); // Log the error
+            Toast.makeText(LoginActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show(); // Show error
+        }
     }
 }

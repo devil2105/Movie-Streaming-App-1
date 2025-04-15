@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="16dp"
+    tools:context=".FillProfileActivity">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Back" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill Your Profile"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:contentDescription="Profile Image" />
+
+    <ImageView
+        android:id="@+id/editProfileImageIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_edit"
+        android:layout_alignBottom="@+id/profileImageView"
+        android:layout_alignEnd="@+id/profileImageView"
+        android:contentDescription="Edit Profile Image" />
+
+    <EditText
+        android:id="@+id/fullNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#FFFFFF"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/nicknameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nickname"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="240dp"
+        android:backgroundTint="#FFFFFF"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="#FFFFFF"
+        android:inputType="textEmailAddress"
+        android:drawableEnd="@android:drawable/ic_dialog_email"
+        android:drawableTint="#A9A9A9" />
+
+    <EditText
+        android:id="@+id/phoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="360dp"
+        android:backgroundTint="#FFFFFF"
+        android:inputType="phone"
+        android:drawableStart="@drawable/ic_flag"
+        android:drawablePadding="8dp"
+        android:drawableTint="#A9A9A9" />
+
+    <Button
+        android:id="@+id/skipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textColor="#FFFFFF"
+        android:background="#424242"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="80dp" />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textColor="#FFFFFF"
+        android:background="#FF0000"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="80dp" />
+
+</RelativeLayout>
